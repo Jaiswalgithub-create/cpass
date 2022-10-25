@@ -8,7 +8,7 @@ import { UserState } from "../reducers/userReducers";
 import { RootState } from "../store";
 import "./login.css";
 import { type } from "os";
-import  logo  from "../images/CPaaSLogo.png";
+// import  logo  from "../images/CPaaSLogo.png";
 import {useTranslation} from "react-i18next";
 // import { useNavigate } from "react-router-dom";
 

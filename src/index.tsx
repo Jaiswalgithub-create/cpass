@@ -4,13 +4,12 @@ import { Provider } from 'react-redux'
 import store from './store'
 import App from './App'
 import './bootstrap.min.css'
-// import "./popper.min"
 import { BrowserRouter } from 'react-router-dom';
 import "./i18n";
 
 ReactDOM.render(
   <Suspense fallback={null}>
-  <BrowserRouter>
+  <BrowserRouter >
   <Provider store={store}>
     <App />
   </Provider>,
