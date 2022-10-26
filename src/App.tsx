@@ -17,7 +17,7 @@ const App = () => {
         <Header />
         <h1>server- {process.env.NODE_ENV} user- {process.env.name}</h1>
           <Routes>
-          <Route exact path="/" element={<HomeScreen/>} />
+          <Route path="/" element={<HomeScreen/>} />
           {/* <Route exact path={process.env.PUBLIC_URL + "/"} ><HomeScreen/></Route> */}
           <Route path="/login" element={<Login/>} />
           </Routes>
