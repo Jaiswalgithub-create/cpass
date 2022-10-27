@@ -7,6 +7,7 @@ import {
   USER_LOGIN_FAIL,
 } from '../constants/userConstants'
 import { RootState } from '../store'
+import axios from "axios";
 
 export const login =
   (
@@ -21,23 +22,35 @@ export const login =
         type: USER_LOGIN_REQUEST,
       })
 
-      const response = await fetch('/api/v1/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      })
+      // const response = await fetch('/api/v1/login', {
+      //   // mode: "no-cors",
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json'},
+      //   credentials: 'include',
+      //   body: JSON.stringify({
+      //     email,
+      //     password,
+      //   }),
+      // })
+      
+      const config = { headers: { "Content-Type": "application/json"} };
 
-      const data = await response.json()
+        //this config file is required for post request
+
+        const { data } = await axios.post(
+            `/api/v1/login`,
+            { email, password },
+            config
+        )
+
+      // const data = await response.json()
       const userData = { email: data.email, password: data.password }
 
       dispatch({
         type: USER_LOGIN_SUCCESS,
-        payload: userData,
+        payload: data,
       })
+      localStorage.setItem('userInfo', JSON.stringify(userData))
 
       localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
     } catch (error: any) {
@@ -57,7 +70,7 @@ export const logout =
     localStorage.removeItem('token')
     dispatch({ type: USER_LOGOUT })
 
-    await fetch('http://localhost:4000/logout', {
+    await fetch('/logout', {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
     })

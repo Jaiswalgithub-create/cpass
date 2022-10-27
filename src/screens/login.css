@@ -6,7 +6,12 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 50px 100px;
+  padding: 30px 100px;
+}
+header .language-select {
+  min-width: 200px;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 header .logo img {
@@ -84,12 +89,24 @@ header .logo img {
 }
 
 .login-area .input-custom {
-  height: 70px;
+  height: 70px !important;
   border: 1px solid #E8EBF3;
   box-shadow: none !important;
   outline: none !important;
   border-radius: 100px;
-  padding: 0px 70px;
+  padding: 0px 70px !important;
+}
+
+.login-area .input-custom::-moz-placeholder {
+  color: red;
+}
+
+.login-area .input-custom:-ms-input-placeholder {
+  color: red;
+}
+
+.login-area .input-custom::placeholder {
+  color: red;
 }
 
 .login-area .form-floating {
@@ -181,3 +198,8 @@ header .logo img {
     margin-top: 20px;
   }
 }/*# sourceMappingURL=login.css.map */
+
+
+.width-adjusting-css{
+  width: 150px;
+}

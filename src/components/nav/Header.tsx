@@ -4,6 +4,8 @@ import i18next from "i18next";
 import "../../i18n";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../../i18n";
+import Logo from '../../images/CPaaSLogo.png';
+import "../../screens/login.css"
 
 const Header = () => {
   const { i18n, t } = useTranslation();
@@ -21,36 +23,34 @@ const Header = () => {
 //   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/">
-        {t<string>("CpaasHeading")}
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <select
+    <header>
+    <div className="container-fluid">
+      <div className="row w-100 align-items-center justify-content-between">
+      <Link className="navbar-brand logo w-auto" to="/">
+     <img className="img-fluid" src={Logo} alt="CPAAS TCL" />
+    {/* {t<string>("CpaasHeading")} */}
+    </Link>
+    <ul className="nav w-auto">
+      <li className="nav-item">
+      <div className="form-floating">
+          <select 
+              className="form-select language-select" 
+              id="floatingSelect" 
+              aria-label="Floating label select example" 
               defaultValue={i18n.language}
-              onChange={(e) => i18n.changeLanguage(e.target.value)}
-            >
-              {availableLanguages.map((language) => (
+              onChange={(e) => i18n.changeLanguage(e.target.value)}>
+            {availableLanguages.map((language) => (
                 <option key={language}>{language}</option>
               ))}
-            </select>
+          </select>
+          <label htmlFor="floatingSelect">Languages</label>
+        </div>
+            
           </li>
-        </ul>
+      </ul>
       </div>
-    </nav>
+    </div>
+ </header>
   );
 };
 

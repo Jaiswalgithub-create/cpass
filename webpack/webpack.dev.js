@@ -10,6 +10,9 @@ module.exports = {
 //   },
   devServer: { 
     historyApiFallback: true,
+    // port: 8080, 
+    // open: true,
+    proxy: { "/api/v1/login": { target: 'http://localhost:4000', secure: false }  }
   },
   plugins: [
     // new ReactRefreshWebpackPlugin(),
