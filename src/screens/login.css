@@ -156,8 +156,8 @@ header .logo img {
 .login-area .login-btn {
   width: 100%;
   height: 70px;
-  background: transparent linear-gradient(297deg, #F57C52 0%, #D63548 100%) 0% 0% no-repeat padding-box;
-  mix-blend-mode: luminosity;
+  background: linear-gradient(297deg, #F57C52 0%, #D63548 100%) 0% 0% no-repeat padding-box;
+  /* mix-blend-mode: luminosity; */
   border-radius: 35px;
   text-align: center;
   font-weight: bold;
@@ -165,13 +165,18 @@ header .logo img {
   line-height: 24px;
   font-family: "Ubuntu", sans-serif;
   letter-spacing: -0.72px;
-  color: #FFFFFF;
+  color: black;
   border: 0px;
   text-transform: uppercase;
   opacity: 0.5;
   box-shadow: none !important;
   outline: none !important;
   margin-top: 30px;
+  /* border: 2px solid black; */
+}
+
+#making-color-red{
+  color: red;
 }
 
 @media (max-width: 768px) {

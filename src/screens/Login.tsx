@@ -11,20 +11,26 @@ import { type } from "os";
 // import  logo  from "../images/CPaaSLogo.png";
 import {useTranslation} from "react-i18next";
 import { useNavigate } from "react-router-dom";
+// import { useAlert } from "react-alert";
 
 const Login = () => {
   let navigate = useNavigate();
+  // const alert = useAlert();
   const {t, i18n} = useTranslation()
   const [open, setOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [open, setOpen] = useState(true);
 
   const dispatch = useDispatch();
   const userLogin = useSelector<RootState, UserState>(
     (state: RootState) => state.userLogin
   );
-  const { userInfo } = userLogin;
+  const { userInfo, error } = userLogin;
   useEffect(() => {
+    // if (error) {
+    //   alert.error(error);
+    // }
     if (userInfo !== undefined && userInfo.success!== undefined) {
       navigate('/setpassword')
       console.log("navigate pending");
@@ -67,6 +73,7 @@ const Login = () => {
           </a>
         </div>
       </header> */}
+
       <div className="login-area">
         <div className="container">
           <div className="row">
@@ -76,6 +83,7 @@ const Login = () => {
                 <div className="form-title">
                   <h5 className="title">{t<string>('loginHeading')}</h5>
                   <p className="sub-title">{t<string>('enterEmailAndPassword')}</p>
+                  <p className="sub-title making-color-red" id="making-color-red">{error && error}</p>
                 </div>
                 <form onSubmit={submitHandler} action="#" method="post">
                   <div className="input-group mb-3">
@@ -220,7 +228,7 @@ const Login = () => {
                     </a>
                   </div>
                   <div className="input-group">
-                    <button type="submit" name="submit" className="login-btn">
+                    <button type="submit" name="submit" disabled={open} className="login-btn">
                     {t<string>('loginBtn')}
                     </button>
                   </div>

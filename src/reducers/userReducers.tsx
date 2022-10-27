@@ -9,7 +9,7 @@ import {
 export interface UserState {
   loading?: boolean
   error?: string
-  userInfo: { email?: string; password?: string; success?: boolean }
+  userInfo: { email?: string; password?: string; success?: boolean; error?: string; }
 }
 
 interface Action {
