@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/setpassword" element={<SetPassword/>} />
           </Routes>
           </main>
-          <h6>Mode - {process.env.NODE_ENV} user - {process.env.name}</h6>
+          <h6 className="mode-text">Mode - {process.env.NODE_ENV} user - {process.env.name}</h6>
     </>
   );
 };

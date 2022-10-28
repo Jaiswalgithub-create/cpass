@@ -3,9 +3,9 @@
     "home": "Home Screen",
     "CpaasHeading": "CPAAS TCL",
     "loginHeading": "Login",
-    "enterEmailAndPassword": "Enter Email ID & Password",
-    "email": "Enter Email",
-    "password": "Enter Password",
+    "enterEmailAndPassword": "Enter email ID & password",
+    "email": "Enter your email ID",
+    "password": "Password",
     "forgotPassword": "Forgot Password ?",
     "loginBtn": "Login"
   }

@@ -83,7 +83,7 @@ const HomeScreen = () => {
   return email ? (
     <h1 data-testid="password-exist">Welcome {email}</h1>
   ) : (
-    <ThemeProvider theme={theme}><StyledWrapper className="main-div"><StyledH1 data-testid="password-exist" id='coloring'>{t<string>('home')}</StyledH1> <StyledButton onClick={handleTheme}>Change Theme</StyledButton><StyledWrapper className="centering-div"><StyledH1 className='h1-padding'>TCL-CPAAS {t<string>('home')}</StyledH1></StyledWrapper></StyledWrapper></ThemeProvider>
+    <ThemeProvider theme={theme}><StyledWrapper className="main-div"><StyledH1 data-testid="password-exist" id='coloring'>{t<string>('home')}</StyledH1> <StyledButton className='theme-toggle' onClick={handleTheme}>Change Theme</StyledButton><StyledWrapper className="centering-div"><StyledH1 className='h1-padding'>TCL-CPAAS {t<string>('home')}</StyledH1></StyledWrapper></StyledWrapper></ThemeProvider>
   )
 } 
 

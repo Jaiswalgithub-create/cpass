@@ -13,6 +13,7 @@ header {
         min-width: 200px;
         box-shadow: none !important;
         outline: none !important;
+        cursor: pointer;
     }
 }
 
@@ -56,6 +57,7 @@ header .logo img {
     letter-spacing: 0px;
     margin-bottom: 15px;
     color: #D63548;
+    text-transform: capitalize;
     opacity: 1;
 }
 .login-area .form-title p.sub-title {
@@ -92,6 +94,7 @@ header .logo img {
     outline: none !important;
     border-radius: 100px;
     padding:0px 70px !important;
+    background: white !important;
 }
 .login-area .input-custom::placeholder {
    color: red;
@@ -149,6 +152,31 @@ header .logo img {
     margin-top: 30px;
 }
 
+.mode-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+        
+}
+.Password-showandhide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: #f7f7f7;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
 
 @media (max-width:768px) {
     header a.logo {
@@ -174,3 +202,5 @@ header .logo img {
         margin-top: 20px;
     }
 }
+
+

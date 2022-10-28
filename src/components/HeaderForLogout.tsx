@@ -42,13 +42,14 @@ const HeaderForLogout = () => {
   }
 
   return (
-    <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
-      <Container>
+   <header>
+        <Navbar className='py-0' variant='dark' expand='lg' collapseOnSelect>
+      <Container fluid>
       <Link className="navbar-brand logo w-auto" to="/">
       <img className="img-fluid" src={Logo} alt="CPAAS TCL" />
      {/* {t<string>("CpaasHeading")} */}
      </Link>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        {/* <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
             {localStorage.token ? (<Nav >
               <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
@@ -58,8 +59,18 @@ const HeaderForLogout = () => {
             <Nav >
               <Nav.Link href='/login'>Login</Nav.Link>
             </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
         <ul className="nav w-auto width-adjusting-css">
+        <li className="nav-item d-flex align-items-center justify-content-start">
+        {localStorage.token ? (<Nav >
+              <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+            </Nav>) :(<Nav className='ms-auto'>
+            <Nav.Link ></Nav.Link>
+          </Nav>) }
+            <Nav >
+              <Nav.Link href='/login'>Login</Nav.Link>
+            </Nav>
+        </li>
       <li className="nav-item width-adjusting-css">
       <div className="form-floating">
           <select 
@@ -79,6 +90,7 @@ const HeaderForLogout = () => {
       </ul>
       </Container>
     </Navbar>
+   </header>
   )
 }
 
