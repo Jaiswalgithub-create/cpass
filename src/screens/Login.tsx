@@ -58,8 +58,10 @@ const Login = () => {
     const patternVariable =
       "(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?|][()-<>/]).{8,}";
     if ((e.target as HTMLInputElement).value.match(patternVariable)) {
+      (e.target as HTMLInputElement).className="form-control input-custom is-valid"
       setOpen(false);
     } else {
+      (e.target as HTMLInputElement).className="form-control input-custom"
       setOpen(true);
     }
   };
@@ -126,7 +128,8 @@ const Login = () => {
                         placeholder="Enter your email"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         value={email}
-                        className="form-control input-custom"
+                        // className="form-control input-custom is-valid"
+                        className={email.match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$") ? "form-control input-custom is-valid" : "form-control input-custom"}
                         id="username"
                       />
                       <label htmlFor="username">{t<string>('email')}</label>
@@ -217,7 +220,6 @@ const Login = () => {
                         onChange={(e) =>
                           setPassword((e.target as HTMLInputElement).value)
                         }
-                        className="form-control input-custom"
                       />
                       <label htmlFor="password">{t<string>('password')}</label>
                     </div>
